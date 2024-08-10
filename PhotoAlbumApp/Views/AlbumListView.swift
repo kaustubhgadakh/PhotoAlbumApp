@@ -8,8 +8,22 @@
 import SwiftUI
 
 struct AlbumListView: View {
+    @StateObject private var viewModel = AlbumViewModel()
+    
     var body: some View {
-        Text("Hello, World!")
+        NavigationView{
+            List(viewModel.albums){album in
+                
+                NavigationLink(destination: PhotoListView(albumId: album.id)) {
+                    Text(album.title)
+                }
+    
+            }
+            .navigationTitle("Albums")
+            .onAppear{
+                viewModel.fetchAlbums()
+            }
+        }
     }
 }
 

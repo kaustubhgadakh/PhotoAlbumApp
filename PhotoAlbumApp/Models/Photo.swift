@@ -12,5 +12,5 @@ struct Photo: Codable, Identifiable{
     let albumId: Int
     let title: String
     let url: String
-    let thumbnailURL: String
+    let thumbnailUrl: String
 }

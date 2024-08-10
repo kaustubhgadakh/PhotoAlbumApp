@@ -9,22 +9,21 @@ import Foundation
 
 class AlbumViewModel: ObservableObject{
     @Published var albums: [Album] = []
-    @Published var isLoading = false
-    @Published var errorMessage: String?
     
-    private let fetchData = FetchData()
-    
-    func fetchAlubums(){
-        isLoading = true
-        errorMessage = nil
-        fetchData.fetchAlbums{[weak self] result in
-            self?.isLoading = false
-            switch result {
-            case .success(let albums):
-                self?.albums = albums
-            case .failure(let error):
-                self?.errorMessage = error.localizedDescription
-            }
+    func fetchAlbums(){
+        guard let url = URL(string: "http://jsonplaceholder.typicode.com/albums")else{
+            print("Invalid URL")
+            return
         }
+        
+        URLSession.shared.dataTask(with: url){data, _, _ in
+            if let data = data{
+                let albums = try? JSONDecoder().decode([Album].self, from: data)
+                DispatchQueue.main.async {
+                    self.albums = albums ?? []
+                    
+                }
+            }
+        }.resume()
     }
 }
