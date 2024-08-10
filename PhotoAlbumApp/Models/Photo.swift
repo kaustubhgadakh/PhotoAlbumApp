@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct Photo: Codable, Identifiable{
+    let id: Int
+    let albumId: Int
+    let title: String
+    let url: String
+    let thumbnailURL: String
+}
