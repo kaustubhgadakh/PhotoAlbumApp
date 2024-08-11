@@ -11,17 +11,27 @@ struct AlbumListView: View {
     @StateObject private var viewModel = AlbumViewModel()
     
     var body: some View {
-        NavigationView{
-            List(viewModel.albums){album in
-                
-                NavigationLink(destination: PhotoListView(albumId: album.id)) {
-                    Text(album.title)
+        ZStack {
+            Color(uiColor: .secondarySystemBackground)
+                .ignoresSafeArea()
+            
+            NavigationView{
+                List(viewModel.albums){album in
+                    NavigationLink(destination: PhotoListView(albumId: album.id)) {
+                        Text("\(album.id).")
+                            .padding(10)
+                            .font(.headline)
+                        Text(album.title)
+                            .font(.subheadline)
+                            
+                    }
+        
                 }
-    
-            }
-            .navigationTitle("Albums")
-            .onAppear{
-                viewModel.fetchAlbums()
+                .listStyle(GroupedListStyle())
+                .navigationTitle("Albums")
+                .onAppear{
+                    viewModel.fetchAlbums()
+                }
             }
         }
     }

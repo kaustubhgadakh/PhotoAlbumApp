@@ -22,6 +22,7 @@ class PhotoViewModel: ObservableObject{
                 DispatchQueue.main.async {
                     self.photos = photos ?? []
                 }
+                print([photos!])
             }
         }.resume()
     }

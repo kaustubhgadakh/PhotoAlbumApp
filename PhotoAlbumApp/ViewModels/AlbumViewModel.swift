@@ -23,6 +23,7 @@ class AlbumViewModel: ObservableObject{
                     self.albums = albums ?? []
                     
                 }
+                print([albums!])
             }
         }.resume()
     }

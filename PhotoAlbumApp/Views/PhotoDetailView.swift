@@ -9,18 +9,32 @@ import SwiftUI
 
 struct PhotoDetailView: View {
     let photoUrl: String
+    let photoTitle: String
     
     var body: some View {
-        VStack{
-            AsyncImage(url: URL(string: photoUrl)){ image in
-                image.resizable()
-                    .scaledToFit()
-            }placeholder: {
-                ProgressView()
+        ZStack{
+            Color(uiColor: .secondarySystemBackground)
+                .ignoresSafeArea()
+            
+            VStack{
+                AsyncImage(url: URL(string: photoUrl)){ image in
+                    image.resizable()
+                        .scaledToFit()
+                        .cornerRadius(20)
+                        .shadow(radius: 10)
+                    
+                    Text(photoTitle)
+                        .font(.headline)
+                        .padding()
+                        .multilineTextAlignment(.center)
+                        
+                }placeholder: {
+                    ProgressView()
+                }
             }
+            .padding()
+            .navigationTitle("Photo Detail")
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .padding()
-        .navigationTitle("Photo Detail")
-        .navigationBarTitleDisplayMode(.inline)
     }
 }

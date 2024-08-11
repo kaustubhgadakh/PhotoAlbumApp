@@ -20,7 +20,6 @@
 		B9D120D42C67935C005821E1 /* PhotoAlbumAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D120D32C67935C005821E1 /* PhotoAlbumAppUITests.swift */; };
 		B9D120D62C67935C005821E1 /* PhotoAlbumAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D120D52C67935C005821E1 /* PhotoAlbumAppUITestsLaunchTests.swift */; };
 		B9D120F22C679485005821E1 /* AlbumListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D120F12C679485005821E1 /* AlbumListView.swift */; };
-		B9D51C402C67DF2B00513DEF /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9D51C3F2C67DF2B00513DEF /* info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +56,6 @@
 		B9D120D32C67935C005821E1 /* PhotoAlbumAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumAppUITests.swift; sourceTree = "<group>"; };
 		B9D120D52C67935C005821E1 /* PhotoAlbumAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B9D120F12C679485005821E1 /* AlbumListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListView.swift; sourceTree = "<group>"; };
-		B9D51C3F2C67DF2B00513DEF /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		B9D51C412C67E72E00513DEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,7 +158,6 @@
 			isa = PBXGroup;
 			children = (
 				B9D120C92C67935C005821E1 /* PhotoAlbumAppTests.swift */,
-				B9D51C3F2C67DF2B00513DEF /* info.plist */,
 			);
 			path = PhotoAlbumAppTests;
 			sourceTree = "<group>";
@@ -287,7 +284,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9D51C402C67DF2B00513DEF /* info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
