@@ -23,9 +23,9 @@ struct PhotoListView: View {
                             AsyncImage(url: URL(string: photo.thumbnailUrl)){ image in
                                 image.resizable()
                                     .scaledToFit()
-                                    .frame(maxWidth: 100, maxHeight: 100)
+                                    .frame(maxWidth: 150, maxHeight: 150)
                                     .cornerRadius(2)
-                                    .shadow(radius: 5)
+                                    .shadow(radius: 10)
                             }placeholder:{
                                 ProgressView()
                             }
